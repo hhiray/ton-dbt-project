@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: t_card_customer_engagement_status
+    description: "Engagement indicator"

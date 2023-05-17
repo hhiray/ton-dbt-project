@@ -10,4 +10,4 @@
 SELECT 
 *
 
-FROM {{ ref( 'stg_cards_transactions_dim') }}
+FROM {{ ref( 'stg_card_transactions_dim') }}
