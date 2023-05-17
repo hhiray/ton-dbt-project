@@ -2,8 +2,25 @@ version: 2
 
 models:
   - name: t_card_customers_dim
-    description: "Snapshot of the status changes of cards"
+    description: "Dimension information about the customers"
+    columns:
+          - name: customer_id
+            description: Customer identifier
+            tests:
+              - not_null
   - name: t_card_transactions_dim
     description: "Dimension information about the transactions"
+    columns:
+          - name: transaction_unique_id
+            description: Unique transaction identifier
+            tests:
+              - not_null
+              - unique
   - name: t_card_transactions_fact
     description: "Facts about the transactions"
+    columns:
+          - name: transaction_unique_id
+            description: Unique transaction identifier
+            tests:
+              - not_null
+              - unique

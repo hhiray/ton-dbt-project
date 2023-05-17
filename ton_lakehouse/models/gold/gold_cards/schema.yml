@@ -3,3 +3,16 @@ version: 2
 models:
   - name: t_card_customer_engagement_status
     description: "Engagement indicator"
+    columns:
+          - name: date
+            description: Date that indicates the period analyzed
+            tests:
+              - not_null
+          - name: customer_id
+            description: Customer identifier
+            tests:
+              - not_null
+          - name: activity_status_ds
+            description: Status of the activity of the customer
+            tests:
+              - not_null
