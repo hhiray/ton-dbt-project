@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: ton_bronze
+    tables:
+      - name: card_transactions
+        tag: ["cards", "bronze"]
+        description: Raw table with all the cards trasactions between 2010-12-31 and 2011-07-01
+        tests:
+        columns:
+          - name: transaction_id
+            description: Transaction identifier
+            tests:
+              - not_null
+          - name: transacted_at
+            description: Date of the transaction
+          - name: capture_type
+            tests: 
+              - not_null
+              - accepted_values:
+                  values: ['link', 'tap', 'pos']
+          - name: card_banner
+            description: Banner of the card
+          - name: payment_type
+            describe: Type of the payment 
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['credit_card', 'debit_card']
+          - name: transaction_state
+            description: State of the clearing flow
+            tests:
+              - not_null
+          - name: transaction_value
+            description: BRL value of the transaction
+            tests:
+              - not_null
+          - name: customer_id
+            description: Customer identifier
+            tests:
+              - not_null
+          - name: customer_state
+            description: State of the customer
+          - name: customer_city
+            description: City of the customer

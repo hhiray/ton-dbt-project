@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: t_card_customers_dim
+    description: "Snapshot of the status changes of cards"
+  - name: t_card_transactions_dim
+    description: "Dimension information about the transactions"
+  - name: t_card_transactions_fact
+    description: "Facts about the transactions"
